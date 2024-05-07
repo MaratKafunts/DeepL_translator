@@ -1,0 +1,63 @@
+@import '../../style/main.scss';
+$navColorBlue: #006494;
+
+.dropdown {
+    @include flex_row($justify: center, $align: center);
+    position: relative;
+    transition-duration: 0.5s;
+    height: 100px;
+    &:hover {
+        color: $navColorBlue;
+    }
+
+    &_hover {
+        border-bottom: 3px solid $navColorBlue;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        opacity: 0;
+        transition-duration: 0.5s;
+    }
+
+    &_hover_active {
+        opacity: 1;
+    }
+    &_notActive {
+        opacity: 0;
+    }
+
+    &__noRotate {
+        transition-duration: 0.5s;
+        transform: rotate(0);
+        margin-top: 2px;
+    }
+
+    &__rotate {
+        transition-duration: 0.5s;
+        transform: rotate(180deg);
+        margin-bottom: 2px;
+    }
+    &__active {
+        transition-duration: 0.7s;
+        display: block;
+        z-index: 1;
+    }
+
+    &__notActive {
+        transition-duration: 0.7s;
+        display: none;
+        z-index: 0;
+    }
+}
+
+.children {
+    box-shadow: 0px 6px 12px 1px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    display: flex;
+    padding: 30px;
+    background: white;
+    white-space: nowrap;
+    border-radius: 5px;
+}

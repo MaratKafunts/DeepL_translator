@@ -1,0 +1,25 @@
+@import "../../style/main.scss";
+.button {
+	border: none;
+	background: none;
+	border-radius: 10px;
+	width: 100%;
+	@include flex_row($justify: center, $align: center);
+	&__element {
+		@include flex_row($justify: center, $align: center);
+		width: 100%;
+		border: none;
+		background: none;
+		font-size: 13pt;
+	}
+
+	&__noRotate {
+		transition-duration: 0.5s;
+		transform: rotate(0);
+	}
+
+	&__rotate {
+		transition-duration: 0.5s;
+		transform: rotate(180deg);
+	}
+}

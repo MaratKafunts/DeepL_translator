@@ -1,0 +1,17 @@
+@mixin flex_row($justify, $align: 'flex-start') {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex_column($justify, $align: 'flex-start') {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin cursor() {
+    cursor: pointer;
+}

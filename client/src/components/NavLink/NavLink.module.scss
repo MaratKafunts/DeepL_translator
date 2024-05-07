@@ -1,0 +1,27 @@
+@import '../../style/main.scss';
+$navColorBlue: #006494;
+
+.navItem {
+    position: relative;
+    transition-duration: 0.5s;
+
+    height: 100px;
+
+    @include flex_row($justify: center, $align: center);
+    &:hover {
+        color: $navColorBlue;
+    }
+
+    &_hover {
+        border-bottom: 3px solid $navColorBlue;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        opacity: 0;
+        transition-duration: 0.5s;
+    }
+
+    &_hover_active {
+        opacity: 1;
+    }
+}

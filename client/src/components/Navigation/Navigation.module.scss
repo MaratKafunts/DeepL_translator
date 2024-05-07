@@ -1,0 +1,15 @@
+@import '../../style/main.scss';
+
+.navigation {
+    max-width: 1560px;
+    width: 100%;
+    @include flex_row($justify: start, $align: start);
+}
+
+@media (max-width: 611px) {
+    .navigation {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

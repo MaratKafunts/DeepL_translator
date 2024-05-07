@@ -1,0 +1,82 @@
+@import '../../style/main.scss';
+
+@media (max-width: 700px) {
+    .languageDropdown {
+        width: 100% !important;
+    }
+}
+.languageDropdown {
+    @include flex_row($justify: start, $align: start);
+    width: 50%;
+    position: absolute;
+    top: 90px;
+    z-index: 5;
+    background: white;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    &__data {
+        @include flex_column($justify: center, $align: center);
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+
+        // padding-top: 10px;
+        // padding-bottom: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        &_wrapper {
+            @include flex_row($justify: center, $align: center);
+            width: 100%;
+        }
+        &_search {
+            width: 100%;
+            @include flex_row($justify: center, $align: start);
+            input {
+                width: 100%;
+                padding: 7px;
+                padding: 10px;
+                background: none;
+                border: 1px solid blue;
+                border-radius: 7px;
+            }
+        }
+        &_firstPart,
+        &_secondPart,
+        &_thirdPart {
+            width: 100%;
+            @include cursor;
+            @include flex_column($justify: center, $align: center);
+            padding-left: 3px;
+            padding-right: 3px;
+            &_language {
+                margin-top: 15px;
+                box-sizing: border-box;
+                padding: 8px;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;
+                }
+                width: 100%;
+                @include flex_column($justify: center, $align: center);
+                text-align: center;
+            }
+        }
+    }
+    &__separatorColumns {
+        height: 480px;
+        border-right: 1px solid #bfbfbf;
+        @include flex_column($justify: center, $align: center);
+    }
+    @media (max-width: 1160px) {
+        #dataThirdPart {
+            display: none;
+        }
+        #thirdSeparatorColumn {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+@import '../../style/main.scss';
+
+.header__wrapper {
+    width: 100%;
+    background: white;
+    @include flex_row($justify: center, $align: center);
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+            0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Second shadow for more depth, if desired */
+}
+
+.header {
+    @include flex_row($justify: space-between, $align: center);
+    max-width: 1560px;
+    // padding: 8px 0px 8px 0px;
+    box-sizing: content-box;
+    width: 100%;
+    @media (max-width: 1103px) {
+        &__start {
+            width: 40% !important;
+        }
+    }
+    @media (max-width: 911px) {
+        &__start {
+            width: 50% !important;
+        }
+    }
+    &__start {
+        width: 25%;
+        @include flex_row($justify: start, $align: center);
+        &_logo {
+            width: 15%;
+            margin-right: 20px;
+            min-width: 50px; /* Element won't shrink below this width */
+        }
+    }
+
+    &__nav {
+        width: 50%;
+        height: 100px;
+        &_ul {
+            // @media (min-width: 1527px) {
+            //     #burgerMenu {
+            //         display: none;
+            //     }
+            // }
+            @media (max-width: 1527px) {
+                #plansAndPricing {
+                    display: none;
+                }
+            }
+            @media (max-width: 1233px) {
+                #api {
+                    display: none;
+                }
+            }
+            @media (max-width: 1103px) {
+                #whyDeepl {
+                    display: none;
+                }
+            }
+            @media (max-width: 911px) {
+                #forBussiness {
+                    display: none;
+                }
+            }
+            @media (max-width: 682px) {
+                #deeplPro {
+                    display: none;
+                }
+            }
+            &_item {
+                height: 100px;
+                white-space: nowrap;
+                @include flex_row($justify: center, $align: center);
+                &_forBusiness {
+                    @include flex_row($justify: center);
+                    // background: white;
+                    width: 100%;
+                    // padding: 20px;
+
+                    &_leftPart {
+                        // @include flex_column($justify: start);
+                        width: 100%;
+                        margin-right: 50px;
+                        &_discover {
+                            color: grey;
+                        }
+                        &_overview {
+                            margin-top: 20px;
+                        }
+                        &_button {
+                            margin-top: 60px;
+                        }
+                    }
+                    &_separatorColumn {
+                        border-right: 1px solid black;
+                        background: #000;
+                        opacity: 0.3;
+                    }
+                    &_rightPart {
+                        // @include flex_column($justify: center, $align: center);s
+
+                        &_forTeams {
+                            color: grey;
+                        }
+                        &_legal,
+                        &_customerSuccess,
+                        &_sales {
+                            margin-top: 20px;
+                        }
+                        margin-left: 30px;
+                        width: 100%;
+                        // display: inline-block;
+                    }
+                }
+                &_whyDeepl {
+                    &_whyPro,
+                    &_features {
+                        margin-top: 20px;
+                    }
+                }
+            }
+            margin: 0;
+            @include flex_row($justify: start, $align: center);
+            width: 100%;
+            list-style: none;
+            &_item {
+                margin-left: 50px;
+            }
+        }
+    }
+    @media (max-width: 1103px) {
+        &__actions {
+            width: 40% !important;
+        }
+    }
+    @media (max-width: 911px) {
+        &__actions {
+            width: 80% !important;
+        }
+    }
+    @media (max-width: 538px) {
+        &__actions {
+            flex-direction: column-reverse !important;
+            width: 30% !important;
+        }
+        #changeThemeIcon {
+            display: none !important;
+        }
+        #savedTranslations {
+            display: none !important;
+        }
+        #startFreeTrial {
+            display: none !important;
+        }
+    }
+    &__actions {
+        width: 25%;
+        @include flex_row($justify: center, $align: center);
+        #burgerMenu {
+            margin-left: 20px;
+            @include flex_row($justify: center, $align: center);
+        }
+        &_burgerMenu {
+            &_item {
+                padding: 5px 50px 5px 50px;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            &_item:hover {
+                background-color: rgba(1, 1, 1, 0.1);
+                width: 100%;
+            }
+        }
+        &_item {
+            margin-left: 20px;
+            white-space: nowrap;
+        }
+    }
+}

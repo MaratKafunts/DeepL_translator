@@ -1,0 +1,8 @@
+@import '../style/main.scss';
+
+.stats {
+    @include flex_column($justify: center, $align: center);
+    &__data {
+        @include flex_row($justify: center, $align: center);
+    }
+}

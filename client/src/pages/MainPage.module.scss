@@ -1,0 +1,16 @@
+@import '../style/main.scss';
+
+.translate {
+    max-width: 1560px;
+    width: 100%;
+    margin-top: 100px;
+
+    @media (max-width: 700px) {
+        &__translationFields {
+            flex-direction: column !important;
+        }
+    }
+    &__translationFields {
+        @include flex_row($justify: center, $align: center);
+    }
+}
